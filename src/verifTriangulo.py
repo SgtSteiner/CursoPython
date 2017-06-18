@@ -12,6 +12,8 @@ no es posible formar un triángulo. En cualquier otro caso sí.
 '''
 
 def es_triangulo(a, b, c):
+    """ Devuelve si es posible formar un triángulo dados como
+    parámetros el tamaño de cada uno de sus lados"""
     if a > b + c:
         return False
     elif b > a + c:

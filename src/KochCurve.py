@@ -7,6 +7,7 @@ Created on 18 jun. 2017
 
 import turtle
 
+
 def dibujaKoch(t, n):
     """ Dibuja una curva de Koch de longitud "n". t es una turtle"""
     if n < 10:
