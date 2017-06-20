@@ -17,8 +17,8 @@ def crea_lista():
     return lista_palabras
 
 def in_bisect(lista_palabras, palabra):
-    """ Busca una palabra en una lista usando el método bisect.
-    Precondición: la lista debe estar ordenada """
+    """ Devuelve verdadero si encuentra una palabra en una lista 
+    usando el método bisect. Precondición: la lista debe estar ordenada """
     i = bisect.bisect_left(lista_palabras, palabra)
     
     if i == len(lista_palabras):
