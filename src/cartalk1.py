@@ -30,4 +30,4 @@ fin = open("words.txt")
 
 for linea in fin:
     if es_triple_doble(linea):
-        print(linea)            
+        print(linea.strip())            
