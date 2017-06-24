@@ -28,6 +28,24 @@ def all_anagram(filename):
 
 dic_anagramas = all_anagram("words.txt")
 
+# Imprime todos los anagramas encontrados
 for v in dic_anagramas.values():
     if len(v) > 1:
         print(v)
+
+# Imprime los anagramas en orden ascendente
+lis_anagramas = []
+for valor in dic_anagramas.values():
+    if len(valor) > 1:
+        lis_anagramas.append((len(valor), valor))
+
+lis_anagramas.sort()
+print("-" * 80)
+for item in lis_anagramas:
+    print(item)
+    
+# Imprime los anagramas que tiene longitud = 8
+print("-" * 80)
+for x, y in lis_anagramas:
+    if x == 8:
+        print(y)

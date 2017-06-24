@@ -30,7 +30,7 @@ def ord_histogram(d):
     return lista_letras, total_frec
 
 
-texto = open("words.txt").read()
+texto = open("LaRegenta.txt", encoding="utf8").read()
 d = make_histogram(texto)
 frecuencia_letras, total_frec = ord_histogram(d)
 for item in frecuencia_letras:
