@@ -26,26 +26,33 @@ def all_anagram(filename):
             d_anagramas[ord_palabra].append(palabra) 
     return d_anagramas
 
-dic_anagramas = all_anagram("words.txt")
+def print_all_anagran(d):
+    for v in d.values():
+        if len(v) > 1:
+            print(v)
 
-# Imprime todos los anagramas encontrados
-for v in dic_anagramas.values():
-    if len(v) > 1:
-        print(v)
+def print_all_anagram_ascend(d):
+    lis_anagramas = []
+    for valor in d.values():
+        if len(valor) > 1:
+            lis_anagramas.append((len(valor), valor))
 
-# Imprime los anagramas en orden ascendente
-lis_anagramas = []
-for valor in dic_anagramas.values():
-    if len(valor) > 1:
-        lis_anagramas.append((len(valor), valor))
+    lis_anagramas.sort()
+    print("-" * 80)
+    for item in lis_anagramas:
+        print(item)
+        
+if __name__ == '__main__':
+    dic_anagramas = all_anagram("words.txt")
 
-lis_anagramas.sort()
-print("-" * 80)
-for item in lis_anagramas:
-    print(item)
+    # Imprime todos los anagramas encontrados
+    print_all_anagran(dic_anagramas)
+
+    # Imprime los anagramas en orden ascendente
+    print_all_anagram_ascend(dic_anagramas)
     
-# Imprime los anagramas que tiene longitud = 8
-print("-" * 80)
-for x, y in lis_anagramas:
-    if x == 8:
-        print(y)
+    # Imprime los anagramas que tiene longitud = 8
+    print("-" * 80)
+    for x, y in lis_anagramas:
+        if x == 8:
+            print(y)
