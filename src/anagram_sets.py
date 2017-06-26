@@ -13,7 +13,10 @@ def ord_cadena(s):
     return cadena
 
 def all_anagram(filename):
+    """ Devuelve un mapep con todos los anagramagras del archivo
     
+    filename = nombre del archivo a procesar 
+    """
     fin = open(filename)
     d_anagramas = dict()
     
@@ -26,12 +29,18 @@ def all_anagram(filename):
             d_anagramas[ord_palabra].append(palabra) 
     return d_anagramas
 
-def print_all_anagran(d):
+def print_all_anagram(d):
+    """ Imprime los anagramas mapeados en d """
     for v in d.values():
         if len(v) > 1:
             print(v)
 
 def print_all_anagram_ascend(d):
+    """ Imprime los anagramas mapeados en d en 
+    orden ascendente según el tamaño de la palabra 
+    
+    d = dict de anagramas
+    """
     lis_anagramas = []
     for valor in d.values():
         if len(valor) > 1:
@@ -42,17 +51,25 @@ def print_all_anagram_ascend(d):
     for item in lis_anagramas:
         print(item)
         
+def print_anagram_size(d, size=8):
+    """ Imprime los anagramas de tamaño <size> mapeados en d
+    
+    d = dict de anagramas
+    size = tamaño de los anagramas
+    """
+    for key in d:
+        if len(key) == size and len(d[key]) > 1:
+            print(d[key])
+    
 if __name__ == '__main__':
     dic_anagramas = all_anagram("words.txt")
 
     # Imprime todos los anagramas encontrados
-    print_all_anagran(dic_anagramas)
+    print_all_anagram(dic_anagramas)
 
     # Imprime los anagramas en orden ascendente
     print_all_anagram_ascend(dic_anagramas)
     
     # Imprime los anagramas que tiene longitud = 8
-    print("-" * 80)
-    for x, y in lis_anagramas:
-        if x == 8:
-            print(y)
+    print_anagram_size(dic_anagramas)
+    
