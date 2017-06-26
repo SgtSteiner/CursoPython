@@ -67,7 +67,7 @@ if __name__ == '__main__':
     # Imprime todos los anagramas encontrados
     print_all_anagram(dic_anagramas)
 
-    # Imprime los anagramas en orden ascendente
+    # Imprime los anagramas en orden ascendente de 
     print_all_anagram_ascend(dic_anagramas)
     
     # Imprime los anagramas que tiene longitud = 8
