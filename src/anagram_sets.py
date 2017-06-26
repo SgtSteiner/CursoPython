@@ -13,7 +13,7 @@ def ord_cadena(s):
     return cadena
 
 def all_anagram(filename):
-    """ Devuelve un mapep con todos los anagramagras del archivo
+    """ Devuelve un mapeo con todos los anagramas del archivo
     
     filename = nombre del archivo a procesar 
     """
