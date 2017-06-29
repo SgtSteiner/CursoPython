@@ -20,7 +20,7 @@ def polilinea(t, n, longitud, angulo):
         ángulo <angulo> entre ellos. t es una turtle"""
     for i in range(n):
         t.fd(longitud)
-        t.ld(angulo)
+        t.lt(angulo)
 
 
 def poligono(t, lados, longitud):
@@ -47,8 +47,9 @@ def circulo(t, radio):
     arco(t, radio, 360)
 
 
-# poligono(bob, lados=7, longitud=50)
-# circulo(bob, 100)
-# arco(bob, radio=75, angulo=180)
+if __name__ == "__main__":
+    poligono(bob, lados=7, longitud=50)
+    circulo(bob, 100)
+    arco(bob, radio=75, angulo=180)
 
-# turtle.mainloop()
+    turtle.mainloop()

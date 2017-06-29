@@ -6,6 +6,7 @@ Created on 28 jun. 2017
 '''
 
 import math
+import copy
 
 class Point:
     """ Representa un punto en el espacio 2-D 
@@ -64,11 +65,25 @@ def move_rectangle(rect, dx, dy):
     rect.corner.x += dx
     rect.corner.y += dy
 
+def move_rectangle_copy(rect, dx, dy):
+    """ Mueve la posición de un objeto Rectángulo
+        
+        rect = objeto Rectangulo
+        dx = añade a la coordenada x (puede ser negativo)
+        dy = añade a la coordenada y (puede ser negativo)
+        
+        return = new objeto Rectangulo
+    """
+    new_rect = copy.deepcopy(rect)
+    move_rectangle(new_rect, dx, dy)
+    return new_rect
+    
 if __name__ == "__main__":
     punto1 = Point()
-    punto2 = Point()
     punto1.x = -4
     punto1.y = 0
+    
+    punto2 = Point()
     punto2.x = 5
     punto2.y = 0
 
@@ -95,3 +110,6 @@ if __name__ == "__main__":
     
     move_rectangle(box, 60, 120)
     print(box.corner.x, box.corner.y)
+    
+    new_box = move_rectangle_copy(box, 60, 120)
+    print(new_box.corner.x, new_box.corner.y)
