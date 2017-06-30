@@ -5,6 +5,8 @@ Created on 29 jun. 2017
 @author: Steiner
 '''
 
+import copy
+
 class Time:
     """ Representa la hora del día
     
@@ -49,6 +51,22 @@ def add_time(t1, t2):
         
     return sum
               
+def increment(time, segundos):
+    """ Añade segundos a un objeto Time 
+    
+        time: objeto Time
+        segundos: segundos
+        
+        return: objeto Time
+    """
+    t1 = copy.copy(time)
+    t1.segundo += segundos
+    minutos, t1.segundo = divmod(t1.segundo, 60)
+    t1.minuto += minutos
+    horas, t1.minuto = divmod(t1.minuto, 60)
+    t1.hora += horas
+    return t1
+    
 if __name__ == "__main__":
     time1 = Time()
     time1.hora = 23
@@ -77,3 +95,5 @@ if __name__ == "__main__":
     done = add_time(start, duration)
     print_time(done)
     
+    t_increm = increment(done, 140)
+    print_time(t_increm)
