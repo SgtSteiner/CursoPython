@@ -28,6 +28,29 @@ def is_after(t1, t2):
     """
     return (t1.hora, t1.minuto, t1.segundo) > (t2.hora, t2.minuto, t2.segundo)
 
+def time_to_int(time):
+    """ Convierte a numérico un objeto Time
+    
+        time: objeto Time
+        
+        return: entero, representando los segundos
+    """
+    minutos = time.hora * 60 + time.minuto
+    segundos = minutos * 60 + time.segundo
+    return segundos
+    
+def int_to_time(n_segundos):
+    """ Convierte segundos a un objeto Time
+    
+        n_segundos: nº de segundos
+        
+        return: objeto Time
+    """
+    time = Time()
+    time.minuto, time.segundo = divmod(n_segundos, 60)
+    time.hora, time.minuto = divmod(time.minuto, 60)
+    return time
+        
 def add_time(t1, t2):
     """ Suma dos objetos Time
     
@@ -36,20 +59,8 @@ def add_time(t1, t2):
         
         return: objeto Time
     """
-    sum = Time()
-    sum.hora = t1.hora + t2.hora
-    sum.minuto = t1.minuto + t2.minuto
-    sum.segundo = t1.segundo + t2.segundo
-    
-    if sum.segundo >= 60:
-        sum.segundo -= 60
-        sum.minuto += 1
-        
-    if sum.minuto >= 60:
-        sum.minuto -= 60
-        sum.hora += 1
-        
-    return sum
+    segundos = time_to_int(t1) + time_to_int(t2)
+    return int_to_time(segundos)
               
 def increment(time, segundos):
     """ Añade segundos a un objeto Time 
@@ -59,13 +70,8 @@ def increment(time, segundos):
         
         return: objeto Time
     """
-    t1 = copy.copy(time)
-    t1.segundo += segundos
-    minutos, t1.segundo = divmod(t1.segundo, 60)
-    t1.minuto += minutos
-    horas, t1.minuto = divmod(t1.minuto, 60)
-    t1.hora += horas
-    return t1
+    segundos += time_to_int(time)
+    return int_to_time(segundos)
     
 if __name__ == "__main__":
     time1 = Time()
@@ -97,3 +103,4 @@ if __name__ == "__main__":
     
     t_increm = increment(done, 140)
     print_time(t_increm)
+    
