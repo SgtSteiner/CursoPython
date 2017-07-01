@@ -5,7 +5,7 @@ Created on 29 jun. 2017
 @author: Steiner
 '''
 
-import copy
+from datetime import datetime
 
 class Time:
     """ Representa la hora del día
@@ -59,6 +59,7 @@ def add_time(t1, t2):
         
         return: objeto Time
     """
+    assert valid_time(t1) and valid_time(t2)
     segundos = time_to_int(t1) + time_to_int(t2)
     return int_to_time(segundos)
               
@@ -72,7 +73,33 @@ def increment(time, segundos):
     """
     segundos += time_to_int(time)
     return int_to_time(segundos)
+
+def mul_time(time, i):
+    """ Multiplica un objeto Time por un factor
+        
+        time: objeto Time
+        i: entero 
+        
+    return: objeto Time
+    """
+    assert valid_time(time)
+    segundos = time_to_int(time) * i
+    return int_to_time(segundos)
     
+def valid_time(time):
+    """ Devuelve verdadero si es un objeto Time 
+        correctamente formado 
+        
+        time= objeto Time
+        
+        return: boolean
+    """
+    if time.hora < 0 or time.minuto < 0 or time.segundo < 0:
+        return False
+    if time.minuto >= 60 or time.segundo >= 60:
+        return False
+    return True
+        
 if __name__ == "__main__":
     time1 = Time()
     time1.hora = 23
@@ -88,6 +115,7 @@ if __name__ == "__main__":
     
     print(is_after(time1, time2))
     
+    # Suma dos tiempos
     start = Time()
     start.hora = 15
     start.minuto = 10
@@ -101,6 +129,30 @@ if __name__ == "__main__":
     done = add_time(start, duration)
     print_time(done)
     
+    # Incrementa segundos a un tiempo dado
     t_increm = increment(done, 140)
     print_time(t_increm)
     
+    print_time(mul_time(t_increm,7))
+    
+    # Calcula la velocidad media por km
+    race = Time()
+    race.hora = 1
+    race.minuto = 24
+    race.segundo = 30
+    dist = 10  # km
+    print("Tiempo en recorrer %g km.: " % dist, end="")
+    print_time(race)
+    tiempo_medio = mul_time(race, 1/dist)
+    print("Velocidad media de ", end="")
+    print_time(tiempo_medio)
+    
+    # Muestra el día de la semana
+    hoy = datetime.today()
+    print(hoy.weekday())
+    print(hoy.strftime("%A"))
+    
+    # Calcula la edad
+    birthday = datetime(1967, 12, 5)
+    hoy = datetime.today()
+    print("Tienes %d años" % (hoy.year - birthday.year))
