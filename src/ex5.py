@@ -1,4 +1,7 @@
-# Ejercicio nº 5
+# -*- coding: utf-8 -*-
+"""
+Exercise 5: More Variables and Printing
+"""
 
 nombre = "Sgt. Steiner"
 edad = 49
@@ -8,11 +11,12 @@ ojos = "marrones"
 dientes = "blancos"
 pelo = "blanco"
 
-print("Vamos a hablar sobre %s." % nombre)
-print("Mide %d cm. de altura." % altura)
-print("Pesa %d kg." % peso)
+print(f"Vamos a hablar sobre {nombre}")
+print(f"Mide {altura} cm. de altura")
+print(f"Pesa {peso} kg.")
 print("Actualmente esto no es demasiado peso.")
-print("Tiene los ojos %s y el pelo %s." % (ojos, pelo))
-print("Sus dientes normalmente son %s dependiendo del café." % dientes)
+print(f"Tiene los ojos {ojos} y el pelo {pelo}")
+print(f"Sus dientes normalmente son {dientes} dependiendo del café")
 
-print("Si sumo %d, %d y %d obtengo %d." % (edad, peso, altura, edad + peso + altura))
+total = edad + peso + altura
+print(f"Si sumo {edad}, {peso} y {altura} obtengo {total}")

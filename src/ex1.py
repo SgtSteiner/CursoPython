@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+Exercise 1: A Good First Program
+"""
+
 print("Hola mundo!")
 print("Hola otra vez!")
 print("Me gusta escribir esto")

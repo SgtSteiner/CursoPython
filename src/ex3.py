@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+Exercise 3: Numbers and Math
+"""
 print("Ahora voy a contar mis gallinas:")
 
 print("Gallinas", 25 + 30 / 6)

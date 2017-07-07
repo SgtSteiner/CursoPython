@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+Exercise 4: Variables and Names
+"""
+
 # Asigna 100 a la variable 'coches'
 coches = 100
 # Asigna 4.0 a la variabla 'capacidad_en_un_coche'

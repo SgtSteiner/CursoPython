@@ -1,4 +1,5 @@
-# Ejercicio nº 10 - What Was That?
+# -*- coding: utf-8 -*-
+# Ejercicio n� 10 - What Was That?
 
 cadena_tab = "\tLínea tabulada"
 cadena_split = "Línea cortada\nen otra línea"

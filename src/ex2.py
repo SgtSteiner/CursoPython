@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+Exercise 2: Comments and Pound Characters 
+"""
 # Un comentario. Esto es para que puedas leer tu programa más tarde
 # Cualquier cosa después de # es ignorado por Python
 
