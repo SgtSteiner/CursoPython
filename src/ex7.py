@@ -1,7 +1,9 @@
-#  Ejercicio 7 - More printing
+# -*- coding: utf-8 -*-
+""" Exercise 7: More Printing
+"""
 
 print("María tenía un corderito.")
-print("Su vellón era blanco como la %s." % 'nieve')
+print("Su vellón era blanco como la {}.".format("nieve"))
 print("Y a todas partes que María fue.")
 print("." * 10)  # ¿qué hace esto?
 

@@ -1,4 +1,6 @@
-# Ejercicio nº 9 - Printing, printing, printing
+# -*- coding: utf-8 -*-
+""" Exercise 9: Printing, Printing, Printing
+"""
 
 dias = "Lun Mar Mie Jue Vie Sab Dom"
 meses = "Ene\nFeb\nMar\nAbr\nMay\nJun\nJul\nAgo\nSep\nOct\nNov\nDic"

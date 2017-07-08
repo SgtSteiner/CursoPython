@@ -1,20 +1,24 @@
-# Ejercicio nº 6 - Strings and Text
+# -*- coding: utf-8 -*-
+""" Exercise 6: Strings and Text
+"""
 
-x = "Existen %d tipo de personas." % 10
+tipos_de_personas = 10
+x = f"Existen {tipos_de_personas} tipos de personas."
+
 binario = "binario"
 no_saben = "no"
-y = "Aquellas que saben %s y las que %s." % (binario, no_saben)
+y = f"Aquellas que saben {binario} y las que {no_saben}."
 
 print(x)
 print(y)
 
-print("Dije: %r" % x)
-print("También dije: '%s'" % y)
+print(f"Dije: {x}")
+print(f"También dije: {y}")
 
 divertido = True
-evaluacion_broma = "¿No es divertida esta broma? %s"
+evaluacion_broma = "¿No es divertida esta broma? {}"
 
-print(evaluacion_broma % divertido)
+print(evaluacion_broma.format(divertido))
 
 w = "Este es el lado izquierdo de..."
 e = "una cadena con una lado derecho"
